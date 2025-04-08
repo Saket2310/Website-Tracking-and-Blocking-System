@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> SSAI-Signup Page</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <div class="login-container">
+    <form id="signupForm" class="login-form">
+      <h2>Create an Account</h2>
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your full name" required>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Choose a username" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="uid">UID</label>
+      <input type="text" id="uid" placeholder="Enter your UID" required>
+
+      <label for="role">Role</label>
+      <select id="role" required>
+        <option value="">Select role</option>
+        <option value="student">Student</option>
+        <option value="faculty">Faculty</option>
+      </select>
+
+      <button type="submit">Sign Up</button>
+
+      <div class="signup-link">
+        Already have an account? <a href="index.html">Login here</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // You can later send this data to your backend or store it
+      const name = document.getElementById('name').value;
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const uid = document.getElementById('uid').value;
+      const role = document.getElementById('role').value;
+
+      alert(`Signup successful!\n\nWelcome, ${name} (${role})`);
+
+      // Redirect to login after signup (optional)
+      window.location.href = 'index.html';
+    });
+  </script>
+
+</body>
+</html>
+
